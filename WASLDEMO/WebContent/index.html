@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>WASL Dashboard</title>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+  <meta charset="UTF-8">
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <script
+    id='sap-ui-bootstrap'
+    type='text/javascript'
+    src='resources/sap-ui-core.js'
+    data-sap-ui-xx-bindingSyntax="complex"
+    data-sap-ui-theme='sap_bluecrystal'
+    data-sap-ui-libs='sap.m,sap.ui.unified,sap.ui.table'
+    data-sap-ui-compatVersion="1.18"
+    data-sap-ui-resourceroots='{
+      "sap.ui.hul.projectmanagement" : "./",
+      "view" : "./view",
+      "util" : "./util",
+      "customControls" : "./customControls"
+    }' > 
+  </script>
+<!-- <script src="/sap/public/bc/ui2/shell-api/sap/ui2/shell/shell.js"></script> -->
+
+<!-- <script src="/sap/public/bc/ui2/services/sap/ui2/srvc/error.js"></script> -->
+
+<!-- <script src="/sap/public/bc/ui2/services/sap/ui2/srvc/utils.js"></script> -->
+
+<!-- <script src="/sap/public/bc/ui2/shell-api/sap/ui2/shell/startup.js"></script> -->
+  <script>
+
+    new sap.m.Shell("Shell", {
+      title : "Customer Info",
+      showLogout : true,
+      appWidthLimited : true, // boolean
+      app : new sap.ui.core.ComponentContainer({
+        name : 'sap.ui.hul.projectmanagement'
+      }),
+      homeIcon : {
+        'phone' : 'img/57_iPhone_Desktop_Launch.png',
+        'phone@2' : 'img/114_iPhone-Retina_Web_Clip.png',
+        'tablet' : 'img/72_iPad_Desktop_Launch.png',
+        'tablet@2' : 'img/144_iPad_Retina_Web_Clip.png',
+        'favicon' : 'img/favicon.ico',
+        'precomposed': false
+      }
+    }).placeAt('content');
+
+  </script>
+<style>
+.dennisseahNewsFeed {
+  border: 2px dotted #333;
+  padding: 5px;
+}
+
+.customize {
+  color: red;
+  background-color: silver;
+  border: 0px solid black;
+}
+#iButtonSave
+{
+margin-left:87%;
+}
+.sapUiUfdShellHeadBegin>.sapUiUfdShellIco {
+    display: inline-flex !important;
+    padding-top: .3rem !important;
+    padding-left: 0rem !important;
+}
+.sapUiUfdShellHeadEnd {
+    right: 130px !important;
+    }
+#myShell-header-icon
+{
+    max-width: 179px !important;;
+}
+/*Shell Search*/
+.sapUiUfdShellHeader {
+ bottom: 4px !important;
+}
+.sapUiUfdShellSearch {
+    width: 76% !important;
+    max-width: 1000px !important;
+}
+.sapUiTableColHdrCnt {
+    background-color: gold !important;
+    font-weight:bold;
+}
+.sapUiTableTr>td {
+    border-right: 0px solid #dddddd !important;
+}
+.sapUiTableTr {
+    height: 40px !important;
+}
+ .boldFont 
+ { 
+     font-weight: 600; 
+} 
+.vboxMarginBottom
+{
+    margin-bottom: 1rem;
+
+}
+.sapUiFormM .sapUiRespGrid.sapUiRespGridVSpace0>div {
+padding-top: 1rem;
+}
+/* overlay dialog content background-color*/
+.sapUiUx3ODContent {
+    background-color: rgb(249,197,125) !important;
+}
+   #iSRPopOver,#iSRPopOver-cont
+   {   
+    background-color: rgb(249,197,125) !important;
+   }  
+   #iSRPopOver-intHeader  
+   {   
+    background-color: rgb(205,143,58) !important;
+   }  
+   
+  .sapUiFormResGrid>div {
+    background-color: rgb(249,197,125) !important;
+    -moz-box-sizing:  content-box !important;
+    box-sizing: content-box !important;
+} 
+#iSRPopOver-title
+{
+    font-weight: bold;
+    color: black;
+    display: table-caption;
+}
+.serviceFeedFontClass
+{
+font-weight:bold !important;
+font-size:.6rem !important;
+}
+.servicefeed
+{
+height:2.5rem !important;
+margin-left:3%;
+margin-right:2%;
+}
+#__xmlview1--serviceFeedHeaderFont-header,#serviceHelpDeskFont-header
+{
+color:darkred !important;
+}
+.sapUiUfdShellHeadUsrItm:before
+{
+    border-right: 0px !important;
+}
+/*  #myRotatedIcon-icon {    */
+/*    transform:rotate(90deg);    */
+/*  -ms-transform:rotate(90deg);  */
+/*  -webkit-transform:rotate(90deg);  */
+/*  }    */
+/* .sapUiLoSplitterContent { */
+/*     overflow: hidden !important; */
+/* } */
+/* *//////////////////////////////////////////////////////////////////////////////*/ */
+   .sidePanel
+   {
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00b7ea+0,009ec3+100;Blue+3D+%2315 */
+background: #00b7ea; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYjdlYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDllYzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #00b7ea 0%, #009ec3 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00b7ea), color-stop(100%,#009ec3)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #00b7ea 0%,#009ec3 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #00b7ea 0%,#009ec3 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #00b7ea 0%,#009ec3 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #00b7ea 0%,#009ec3 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=0 ); /* IE6-8 */
+   
+   }
+   .selectLabel
+   {
+    line-height:3 !important;
+   }
+   
+   .shell
+   {
+   font-family: 'Roboto';
+   }
+   .shell .sapUiUfdShellCntnt
+   {
+    background-color: #9B1A0D !important;
+    color:white !important;
+   }
+   .customerTxt
+   {
+   line-height:3.5 !important;
+   color:white;
+   }
+   .ServiceHelpLabel
+   {
+   color:white !important;
+   padding:1rem !important;
+   }
+   .customerListItem
+   {
+    background-color: chocolate !important;
+   }
+   .customerTile
+   {
+   background-color: white !important;
+   }
+    .customerListItem div,.customerListItem label
+   {
+   color: white !important;
+   }
+   .customerGrid
+   {
+       background-color: chocolate;
+    margin: 1em;
+    
+   }
+   .tileClass
+   {
+   margin: 0.1em;
+   }
+   
+       .footer
+       {
+       background-color: #009688 !important;
+       }
+  .shell  .sapUiUfdShellHeadUsrItm,.shell .sapUiUfdShellHeadItm span
+  {
+  color:white !important;
+   }
+   .sidePanel span,.sidePanel div
+   {
+   color:white !important;
+   }
+   .sidePanel:hover
+   {
+   background-color:black !important;
+   }
+   .paneContent
+   {
+   background-color: #2A8EA5 !important;
+   }
+   .chartColor
+   {
+    background-color: white !important;
+    margin-top:10px !important;
+   }
+   .homePage
+   {
+ background-color: #DCE4E3 !important; 
+   }
+   .header
+   {
+   margin-top:auto !important;
+   }
+   .top5CustLbl
+   {
+   font-weight:700;
+   color:black !important;
+   }
+   .splitter > section
+   {
+   background-color: white !important;
+   }
+   .tabVBox 
+   {
+   background-image:url('./images/bckIconTab.png')
+   }
+  .iconTab .sapMITBCount
+{
+font-size: large;
+font-weight: bolder;
+color: gold;
+}
+
+.iconTab .sapMITBFilterDefault {
+    color: #5F5F5F;
+        text-shadow: 0 0 0 rgba(255,255,255,0.7)
+}
+
+.iconTab .sapMITBFilter .sapMITBText {
+    position: relative;
+    color: #FDFBF9;
+     text-shadow: 0 0 0 rgba(255,255,255,0.7);
+         overflow: visible;
+    text-overflow: initial;
+}
+
+.iconTab .sapMITBFilter
+{
+width:7rem;
+}
+.servicefeed
+{
+color:black;
+}
+
+.iconTabTable tr th
+{
+background-color: gold;
+}    
+/* //height: 3rem; */
+/*     background-color: #9B1A0D; */
+</style>
+</head>
+<body class='sapUiBody' id='content'>
+</body>
+</html>

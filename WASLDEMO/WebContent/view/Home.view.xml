@@ -1,0 +1,309 @@
+<core:View xmlns:core="sap.ui.core" id="home" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="view.Home" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:table="sap.ui.table" 	xmlns:c="sap.suite.ui.commons"
+	xmlns:view="view"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified">
+
+
+	<Page xmlns="sap.m" busy="false" busyIndicatorDelay="1000"
+		visible="true" title="" titleLevel="Auto" showNavButton="false"
+		showHeader="false" showSubHeader="true" navButtonText=""
+		enableScrolling="true" icon="" backgroundDesign="Standard"
+		navButtonType="Back" showFooter="true" navButtonTap="" class="homePage"
+		navButtonPress="">
+		<content>
+
+			<Splitter xmlns="sap.ui.layout" busy="false"
+				busyIndicatorDelay="1000" visible="true" orientation="Horizontal"
+				width="100%" height="100%" resize="" class="splitter">
+				<contentAreas>
+
+					<HBox xmlns="sap.m" busy="false" busyIndicatorDelay="1000"
+						visible="true" height="" width="" displayInline="false" direction="Row"
+						fitContainer="false" renderType="Div" justifyContent="Start"
+						alignItems="Stretch" class="tabVBox">
+						<items>
+							<VerticalLayout xmlns="sap.ui.layout" id="id"
+								busy="false" busyIndicatorDelay="1000" visible="true" width=""
+								enabled="true">
+								<content>
+						
+									<Label class="ServiceHelpLabel" xmlns="sap.m" busy="false" busyIndicatorDelay="1000"
+										visible="true" design="Standard" text="SERVICE HELP DESK"
+										textAlign="Begin" textDirection="Inherit" width="" required="false"
+										labelFor="">
+									</Label>
+									<IconTabBar xmlns="sap.m" busy="false"
+										busyIndicatorDelay="1000" visible="true" showSelection="true"
+										expandable="true" expanded="true" selectedKey="" upperCase="false"
+										stretchContentHeight="false" applyContentPadding="true"
+										backgroundDesign="Solid" select="IconBarSelect" expand="" class="iconTab">
+										<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+										<dependents></dependents> <!-- sap.ui.core.Control, since 1.19 -->
+										<items>
+											<IconTabFilter xmlns="sap.m" text="Unassigned"
+												enabled="true" textDirection="Inherit" key="1" count="{lengthModel>/visibleRowLengthUnAssigned}"
+												showAll="false" icon="sap-icon://unpaid-leave" iconColor="Default"
+												iconDensityAware="true" visible="true" design="Vertical">
+												<content></content> <!-- sap.ui.core.Control, since 1.15.0 -->
+											</IconTabFilter>
+											<IconTabFilter xmlns="sap.m" text="Not Acknowledged"
+												enabled="true" textDirection="Inherit" key="2" count="{lengthModel>/visibleRowLengthNotAcknowledged}"
+												showAll="false" icon="sap-icon://quality-issue" iconColor="Default"
+												iconDensityAware="true" visible="true" design="Vertical">
+												<content></content> <!-- sap.ui.core.Control, since 1.15.0 -->
+											</IconTabFilter>
+											<IconTabFilter xmlns="sap.m" text="Missed"
+												enabled="true" textDirection="Inherit" key="3" count="{lengthModel>/visibleRowLengthMissed}"
+												showAll="false" icon="sap-icon://add-activity-2" iconColor="Default"
+												iconDensityAware="true" visible="true" design="Vertical">
+												<content></content> <!-- sap.ui.core.Control, since 1.15.0 -->
+											</IconTabFilter>
+											<IconTabFilter xmlns="sap.m" text="Pending"
+												enabled="true" textDirection="Inherit" key="4" count="{lengthModel>/visibleRowLengthPending}"
+												showAll="false" icon="sap-icon://pending" iconColor="Default"
+												iconDensityAware="true" visible="true" design="Vertical">
+												<content></content> <!-- sap.ui.core.Control, since 1.15.0 -->
+											</IconTabFilter>
+										</items> <!-- sap.m.IconTab -->
+										<content>
+<!-- 											<NewsFeed id="iCustomFileUploader" width="300px" text="hello"> -->
+<!-- 			</NewsFeed> -->
+
+      
+
+			<view:NewsFeed class="customize" id="iCustom" text="Alerts: Appointment missed...  New P1 ticket...   SLA breach...   Dissatisfied customer..." >
+			</view:NewsFeed>
+		
+
+		
+		<c:DateRangeSlider 
+id="daterangesel"
+	visible="true"
+		width="100%"
+	enabled="true"
+	editable="true"
+	showBubbles="true"
+	
+	stepLabels="true"
+
+	change="daychange"
+	liveChange="daychange1">
+	
+</c:DateRangeSlider>
+		
+						
+						
+	<table:Table id="AccountCP1" selectionMode="None"
+	rows="{oModel_DisplaySR>/d/results}" visibleRowCount="{lengthModel>/visibleRowLength}" filter="onFilterResizeTable" >  
+              <table:columns>  
+              
+              
+                               <table:Column sorted="false" width="17%"
+                        sortOrder="Ascending"
+                        sortProperty="SoldToPartyName"
+                        filterProperty="SoldToPartyName"
+                        filterOperator="Contains">  
+                                  <Label text="SOLD TO PARTY NAME"/>  
+                                  <table:template><Link xmlns="sap.ui.commons"
+								
+									text="{oModel_DisplaySR>SoldToPartyName}"
+									enabled="true"
+									helpId=""
+									href=""
+									target=""
+									width=""
+									ariaDescribedBy=""
+									ariaLabelledBy=""
+									press="onPressSoldToParty">
+								</Link>
+</table:template>
+                                       
+                        </table:Column>
+                          
+                 <table:Column sorted="false" width="13%"
+                                sortOrder="Ascending"
+                        sortProperty="RentalUnit"
+                        filterProperty="RentalUnit"
+                        filterOperator="Contains"
+                               >
+
+                                  <Label text="RENTAL UNIT"/>  
+                                       <table:template><Text text="{oModel_DisplaySR>RentalUnit}"
+											textDirection="Inherit"
+											wrapping="true"
+											textAlign="Begin"
+											width=""
+											>
+												</Text></table:template>                      
+                        </table:Column>
+                        
+                             <table:Column sorted="false" width="14%"
+                        sortOrder="Ascending"
+                        sortProperty="CreatedDate"
+                        filterProperty="CreatedDate"
+                        filterOperator="Contains">  
+                                  <Label text="CREATED DATE"/>  
+                                        <table:template><Text text="{
+ 											path:'oModel_DisplaySR>CreatedDate',  
+  											formatter:'util.Formatter.date1'  
+										}"  
+											textDirection="Inherit"
+											wrapping="true"
+											textAlign="Begin"
+											width=""
+											/></table:template>  
+                        </table:Column> 
+            
+                        <table:Column  sorted="false" width="9%"
+                        sortOrder="Ascending"
+                        sortProperty="Status"
+                         filterProperty="Status"
+                        filterOperator="Contains"
+                       >  
+                                  <Label text="STATUS"/>  
+                                         <table:template><Text text="{oModel_DisplaySR>Status}" /></table:template>  
+                         </table:Column> 
+                        <table:Column sorted="false" width="9%"
+                        sortOrder="Ascending"
+                        sortProperty="PriorityCode"
+                        filterProperty="PriorityCode"
+                        filterOperator="Contains">  
+                                  <Label text="PRIORITY"/>  
+                                        <table:template><Text text="{oModel_DisplaySR>PriorityCode}" /></table:template>  
+                        </table:Column>  
+
+                        <table:Column width="14%" hAlign="Left" 
+                        sortOrder="Ascending"
+                        sortProperty="EmployeeName"
+                        filterProperty="EmployeeName"
+                        filterOperator="Contains">  
+                                  <Label text="EMPLOYEE NAME"/>  
+                                        <table:template><Text text="{oModel_DisplaySR>EmployeeName}" /></table:template>  
+                        </table:Column>
+                        
+                    
+                        
+                        <table:Column  sorted="false" width="16%"
+                         sortOrder="Ascending" 
+                         sortProperty="ServiceRequestId" 
+                        filterProperty="ServiceRequestId" 
+                         filterOperator="Contains">
+                          
+                                  <Label text="SERVICE REQUEST ID"/>  
+                                        <table:template><Link class="testClass" xmlns="sap.ui.commons"
+								
+									text="{oModel_DisplaySR>ServiceRequestId}"
+									enabled="true"
+									helpId=""
+									href=""
+									target=""
+									width=""
+									ariaDescribedBy=""
+									ariaLabelledBy=""
+									press="handleServiceRequest">
+								</Link>
+</table:template>  
+                        </table:Column>
+             
+              </table:columns>  
+    </table:Table>  
+
+										</content> <!-- sap.ui.core.Control -->
+									</IconTabBar>
+
+								</content> <!-- sap.ui.core.Control -->
+							</VerticalLayout>
+
+						</items> <!-- sap.ui.core.Control -->
+						<layoutData>
+							<l:SplitterLayoutData size="80%" resizable="false" />
+						</layoutData>
+					</HBox>
+
+
+
+					<List id="serviceFeedHeaderFont" xmlns="sap.m" busy="false" headerText="SERVICE FEEDS"
+						busyIndicatorDelay="1000" visible="true" inset="false">
+						<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+						<dependents></dependents> <!-- sap.ui.core.Control, since 1.19 -->
+						<items>
+
+							<CustomListItem xmlns="sap.m" busy="false"
+								busyIndicatorDelay="1000" visible="true" type="Inactive" unread="false"
+								selected="false" ariaLabelledBy="" tap="" detailTap="" press=""
+								detailPress="" class="servicefeed">
+								<content>
+									<Text class="serviceFeedFontClass" text="Email Down Saturday,  Sep 22 at 1 PM to 4 PM"></Text>
+								</content> <!-- sap.ui.core.Control -->
+							</CustomListItem>
+							<CustomListItem xmlns="sap.m" busy="false"
+								busyIndicatorDelay="1000" visible="true" type="Inactive" unread="false"
+								selected="false" ariaLabelledBy="" tap="" detailTap="" press=""
+								detailPress="" class="servicefeed">
+								<content>
+									<Text class="serviceFeedFontClass" text="Email Down Saturday,  Sep 22 at 1 PM to 4 PM"></Text>
+								</content> <!-- sap.ui.core.Control -->
+							</CustomListItem>
+							<CustomListItem xmlns="sap.m" busy="false"
+								busyIndicatorDelay="1000" visible="true" type="Inactive" unread="false"
+								selected="false" ariaLabelledBy="" tap="" detailTap="" press=""
+								detailPress="" class="servicefeed">
+								<content>
+									<Text class="serviceFeedFontClass" text="Email Down Saturday,  Sep 22 at 1 PM to 4 PM"></Text>
+								</content> <!-- sap.ui.core.Control -->
+							</CustomListItem>
+							<CustomListItem xmlns="sap.m" busy="false"
+								busyIndicatorDelay="1000" visible="true" type="Inactive" unread="false"
+								selected="false" ariaLabelledBy="" tap="" detailTap="" press=""
+								detailPress="" class="servicefeed">
+								<content>
+									<Text class="serviceFeedFontClass" text="Email Down Saturday,  Sep 22 at 1 PM to 4 PM"></Text>
+								</content> <!-- sap.ui.core.Control -->
+							</CustomListItem>
+
+
+
+
+						</items>
+						<swipeContent></swipeContent> <!-- sap.ui.core.Control -->
+						<headerToolbar></headerToolbar> <!-- sap.m.Toolbar, since 1.16 -->
+						<infoToolbar></infoToolbar> <!-- sap.m.Toolbar, since 1.16 -->
+						<layoutData>
+							<l:SplitterLayoutData size="100%" resizable="false" />
+						</layoutData>
+					</List>
+
+				</contentAreas> <!-- sap.ui.core.Control -->
+			</Splitter>
+
+
+
+
+
+
+		</content> <!-- sap.ui.core.Control -->
+		<customHeader></customHeader> <!-- sap.m.IBar -->
+		<footer>
+			<!-- <Toolbar xmlns="sap.m" busy="false" busyIndicatorDelay="1000" -->
+			<!-- visible="true" width="" active="false" enabled="true" height="" -->
+			<!-- design="Auto" press="" class="footer"> -->
+			<!-- <content> -->
+			<!-- <ToolbarSpacer></ToolbarSpacer> -->
+			<!-- <Button xmlns="sap.m" busy="false" busyIndicatorDelay="1000" -->
+			<!-- visible="true" text="" type="Default" width="" enabled="true" -->
+			<!-- icon="sap-icon://drill-up" iconFirst="true" activeIcon="" -->
+			<!-- iconDensityAware="true" textDirection="Inherit" ariaDescribedBy="" -->
+			<!-- ariaLabelledBy="" tap="" press="showSummary"> -->
+			<!-- </Button> -->
+
+			<!-- </content> sap.ui.core.Control -->
+			<!-- </Toolbar> -->
+
+		</footer> <!-- sap.m.IBar -->
+		<subHeader></subHeader> <!-- sap.m.IBar -->
+		<headerContent></headerContent> <!-- sap.ui.core.Control -->
+	</Page>
+
+
+</core:View>

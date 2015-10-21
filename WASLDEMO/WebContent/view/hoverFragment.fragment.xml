@@ -1,0 +1,261 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:c="sap.ui.commons" xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form">
+	<!-- <l:Grid defaultSpan="L12 M12 S12" class="sapUiSmallMarginTop"> -->
+	<!-- <l:content> -->
+<Popover xmlns="sap.m" placement="Right" busy="false" id="iSRPopOver" 
+		offsetX="0" 
+	offsetY="0"
+	busyIndicatorDelay="10" showHeader="true" contentWidth="59%"
+	contentHeight="44%" modal="false" title="{oModel_SelectedDisplaySR>/0/Description}">
+	<endButton>
+	<Button xmlns="sap.m" text="" type="Default" width="" enabled="true"
+	icon="sap-icon://edit" press="closeSoldToPartyPopOver">
+	</Button>
+	</endButton> 
+<!-- 	<OverlayDialog xmlns="sap.ui.ux3" busy="false" -->
+<!-- 		busyIndicatorDelay="1000" visible="true" openButtonVisible="true" -->
+<!-- 		closeButtonVisible="true" width="54%" height="60%" close="" closed="" -->
+<!-- 		openNew="" open=""> -->
+<!-- 		<tooltip></tooltip> -->
+<!-- 		<dependents></dependents> -->
+
+
+<!-- 		<content> -->
+<!-- 			<l:Grid defaultSpan="L12 M12 S12" width=""> -->
+				<form:Form id="iGeneral11" minWidth="300" maxContainerCols="2"
+					editable="true">
+					<form:layout>
+						<form:ResponsiveGridLayout labelSpanL="6"
+							labelSpanM="7" emptySpanL="0" emptySpanM="1" columnsL="3"
+							columnsM="2" />
+					</form:layout>
+					<form:formContainers>
+
+						<form:FormContainer id="" title="">
+
+							<form:formElements>
+
+								<form:FormElement label="SERVICE REQUEST ID"
+									width="50%">
+									<form:fields class="marginTop">
+
+										<c:TextField  value="{oModel_SelectedDisplaySR>/0/ServiceRequestId}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+
+									</form:fields>
+								</form:FormElement>
+
+								<form:FormElement label="CREATED ON" width="50%">
+									<form:fields class="marginTop">
+										<c:TextField  value="{
+ 											path:'oModel_SelectedDisplaySR>/0/CreatedDate',  
+  											formatter:'util.Formatter.date1'  
+										}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+									</form:fields>
+								</form:FormElement>
+
+
+								<form:FormElement label="DESCRIPTION" width="50%"
+									class="formLabel">
+									<form:fields>
+										<c:TextField value="{oModel_SelectedDisplaySR>/0/Description}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+									</form:fields>
+								</form:FormElement>
+
+								<form:FormElement label="CREATED BY" width="60%">
+									<form:fields>
+										<c:TextField value="{oModel_SelectedDisplaySR>/0/CreatedBy}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+
+									</form:fields>
+								</form:FormElement>
+
+
+								<form:FormElement label="STATUS" width="60%">
+									<form:fields>
+										<c:TextField value="{oModel_SelectedDisplaySR>/0/Status}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+
+									</form:fields>
+								</form:FormElement>
+
+
+
+								<!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+								<form:FormElement label="PRIORITY" width="50%">
+									<form:fields>
+
+										<c:TextField value="{oModel_SelectedDisplaySR>/0/PriorityDesc}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+
+									</form:fields>
+								</form:FormElement>
+
+								<form:FormElement label="SOLD TO PARTY NAME"
+									width="50%" class="formLabel">
+									<form:fields>
+										<c:TextField value="{oModel_SelectedDisplaySR>/0/SoldToPartyName}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+									</form:fields>
+								</form:FormElement>
+
+
+
+
+<!-- 								<form:FormElement label="EMAIL ID" width="60%"> -->
+<!-- 									<form:fields> -->
+<!-- 										<c:TextField value="{oModel_SelectedDisplaySR>/0/EmailId}" -->
+<!-- 											change="" liveChange="" editable="false" width="100%"> -->
+<!-- 										</c:TextField> -->
+
+<!-- 									</form:fields> -->
+<!-- 								</form:FormElement> -->
+
+
+								<!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
+
+
+
+
+
+							</form:formElements>
+
+						</form:FormContainer>
+
+
+						<form:FormContainer id="" title="">
+
+							<form:formElements> 
+<!-- 								<form:FormElement label="REPORTER" width="50%"> -->
+<!-- 									<form:fields> -->
+
+<!-- 										<c:TextField value="{oModel_SelectedDisplaySR>/0/Reporter}" -->
+<!-- 											change="" liveChange="" editable="false" width="100%"> -->
+<!-- 										</c:TextField> -->
+
+<!-- 									</form:fields> -->
+<!-- 								</form:FormElement> -->
+
+<!-- 								<form:FormElement label="REPORTER NAME" width="50%"> -->
+<!-- 									<form:fields> -->
+<!-- 										<c:TextField value="{oModel_SelectedDisplaySR>/0/ReporterName}" -->
+<!-- 											change="" liveChange="" editable="false" width="100%"> -->
+<!-- 										</c:TextField> -->
+<!-- 									</form:fields> -->
+<!-- 								</form:FormElement> -->
+
+<form:FormElement label="SOLD TO PARTY" width="50%">
+									<form:fields>
+										<c:TextField value="{oModel_SelectedDisplaySR>/0/SoldToParty}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+									</form:fields>
+								</form:FormElement>
+								
+
+								<form:FormElement label="CONTACT NO" width="60%">
+									<form:fields>
+										<c:TextField value="{oModel_SelectedDisplaySR>/0/ContactNo}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+
+									</form:fields>
+								</form:FormElement>
+								<form:FormElement label="EMPLOYEE RESPONSIBLE"
+									width="50%" class="formLabel">
+									<form:fields>
+										<c:TextField value="{oModel_SelectedDisplaySR>/0/EmployeeResponsible}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+									</form:fields>
+								</form:FormElement>
+
+								<form:FormElement label="EMPLOYEE NAME" width="60%">
+									<form:fields>
+										<c:TextField value="{oModel_SelectedDisplaySR>/0/EmployeeName}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+
+									</form:fields>
+								</form:FormElement>
+
+
+<!-- 								<form:FormElement label="SERVICE TEAM " width="60%"> -->
+<!-- 									<form:fields> -->
+<!-- 										<c:TextField value="{oModel_SelectedDisplaySR>/0/ServiceTeam}" -->
+<!-- 											change="" liveChange="" editable="false" width="100%"> -->
+<!-- 										</c:TextField> -->
+
+<!-- 									</form:fields> -->
+<!-- 								</form:FormElement> -->
+<!-- 								<form:FormElement label="ATTACHMENTS" width="50%"> -->
+<!-- 									<form:fields> -->
+
+<!-- 										<c:TextField value="oModel_SelectedDisplaySR>/0/Lastname" -->
+<!-- 											change="" liveChange="" editable="false" width="100%"> -->
+<!-- 										</c:TextField> -->
+
+<!-- 									</form:fields> -->
+<!-- 								</form:FormElement> -->
+
+<!-- 								<form:FormElement label="NOTES" width="50%"> -->
+<!-- 									<form:fields> -->
+<!-- 										<c:TextField value="oModel_SelectedDisplaySR>/0/Lastname" -->
+<!-- 											change="" liveChange="" editable="false" width="100%"> -->
+<!-- 										</c:TextField> -->
+<!-- 									</form:fields> -->
+<!-- 								</form:FormElement> -->
+
+
+								<form:FormElement label="CATEGORY" width="50%"
+									class="formLabel">
+									<form:fields>
+										<c:TextField value="{oModel_SelectedDisplaySR>/0/Category}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+									</form:fields>
+								</form:FormElement>
+
+								<form:FormElement label="RENTAL UNIT" width="60%">
+									<form:fields>
+										<c:TextField value="{oModel_SelectedDisplaySR>/0/RentalUnit}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+
+									</form:fields>
+								</form:FormElement>
+
+
+								<form:FormElement label="DUE DATE" width="60%">
+									<form:fields>
+										<c:TextField value="{
+ 											path:'oModel_SelectedDisplaySR>/0/DueDate',  
+  											formatter:'util.Formatter.date1'  
+										}"
+											change="" liveChange="" editable="false" width="100%">
+										</c:TextField>
+
+									</form:fields>
+								</form:FormElement>
+
+							</form:formElements>
+						</form:FormContainer>
+
+					</form:formContainers>
+
+				</form:Form>
+<!-- 			</l:Grid> -->
+			</Popover> 
+<!-- 		</content> -->
+<!-- 	</OverlayDialog> -->
+</core:FragmentDefinition>

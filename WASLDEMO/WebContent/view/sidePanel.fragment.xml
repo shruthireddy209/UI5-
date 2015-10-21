@@ -1,0 +1,35 @@
+	<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+		<List id="serviceHelpDeskFont" xmlns="sap.m" busy="false" busyIndicatorDelay="1000"
+						visible="true" headerText="SERVICE HELP DESK" inset="false">
+						<tooltip></tooltip> <!-- sap.ui.core.TooltipBase -->
+						<dependents></dependents> <!-- sap.ui.core.Control, since 1.19 -->
+						<items>
+							<StandardListItem xmlns="sap.m" busy="false"
+								busyIndicatorDelay="1000" visible="true" type="Active" unread="false"
+								selected="false" title="DASHBOARD">
+							</StandardListItem>
+							<StandardListItem xmlns="sap.m" busy="false"
+								busyIndicatorDelay="1000" visible="true" type="Active" unread="false"
+								selected="false" title="NEW CASE">
+							</StandardListItem>
+							<StandardListItem xmlns="sap.m" busy="false"
+								busyIndicatorDelay="1000" visible="true" type="Active" unread="false"
+								selected="false" title="MY ASSIGNED CASE">
+							</StandardListItem>
+							<StandardListItem xmlns="sap.m" busy="false"
+								busyIndicatorDelay="1000" visible="true" type="Active" unread="false"
+								selected="false" title="CASE LIST">
+							</StandardListItem>
+							<StandardListItem xmlns="sap.m" busy="false"
+								busyIndicatorDelay="1000" visible="true" type="Active" unread="false"
+								selected="false" title="OVERDUE CASES">
+							</StandardListItem>
+
+						</items>
+						<swipeContent></swipeContent> <!-- sap.ui.core.Control -->
+						<headerToolbar></headerToolbar> <!-- sap.m.Toolbar, since 1.16 -->
+						<infoToolbar></infoToolbar> <!-- sap.m.Toolbar, since 1.16 -->
+					</List>
+			</core:FragmentDefinition>
+			
